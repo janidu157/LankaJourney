@@ -53,6 +53,9 @@ namespace LankaJourneyUI {
 
 	private: System::Windows::Forms::Button^ btnDashboard;
 	private: System::Windows::Forms::PictureBox^ horizontalLine;
+	private: System::Windows::Forms::Panel^ pnlForButton;
+
+
 
 
 
@@ -78,17 +81,19 @@ namespace LankaJourneyUI {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->PanelSlidebar = (gcnew System::Windows::Forms::Panel());
-			this->btnPlanning = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->btnAccommodatiion = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->btnDashboard = (gcnew System::Windows::Forms::Button());
 			this->horizontalLine = (gcnew System::Windows::Forms::PictureBox());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->btnAccommodatiion = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->btnPlanning = (gcnew System::Windows::Forms::Button());
+			this->btnDashboard = (gcnew System::Windows::Forms::Button());
+			this->pnlForButton = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->PanelSlidebar->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->horizontalLine))->BeginInit();
+			this->pnlForButton->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -115,12 +120,13 @@ namespace LankaJourneyUI {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(562, 286);
+			this->button1->Location = System::Drawing::Point(-3, -3);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(396, 77);
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Plan My Journey";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &Dashboard::button1_Click);
 			// 
 			// PanelSlidebar
 			// 
@@ -140,17 +146,64 @@ namespace LankaJourneyUI {
 			this->PanelSlidebar->Size = System::Drawing::Size(225, 575);
 			this->PanelSlidebar->TabIndex = 4;
 			// 
-			// btnPlanning
+			// horizontalLine
 			// 
-			this->btnPlanning->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPlanning.BackgroundImage")));
-			this->btnPlanning->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->btnPlanning->Dock = System::Windows::Forms::DockStyle::Top;
-			this->btnPlanning->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnPlanning->Location = System::Drawing::Point(0, 60);
-			this->btnPlanning->Name = L"btnPlanning";
-			this->btnPlanning->Size = System::Drawing::Size(225, 50);
-			this->btnPlanning->TabIndex = 6;
-			this->btnPlanning->UseVisualStyleBackColor = true;
+			this->horizontalLine->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"horizontalLine.BackgroundImage")));
+			this->horizontalLine->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->horizontalLine->Dock = System::Windows::Forms::DockStyle::Top;
+			this->horizontalLine->Location = System::Drawing::Point(0, 310);
+			this->horizontalLine->Name = L"horizontalLine";
+			this->horizontalLine->Size = System::Drawing::Size(225, 50);
+			this->horizontalLine->TabIndex = 5;
+			this->horizontalLine->TabStop = false;
+			// 
+			// button9
+			// 
+			this->button9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button9.BackgroundImage")));
+			this->button9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button9->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button9->Location = System::Drawing::Point(0, 370);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(225, 50);
+			this->button9->TabIndex = 12;
+			this->button9->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.BackgroundImage")));
+			this->button7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button7->Dock = System::Windows::Forms::DockStyle::Top;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Location = System::Drawing::Point(0, 260);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(225, 50);
+			this->button7->TabIndex = 10;
+			this->button7->UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this->button6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.BackgroundImage")));
+			this->button6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->button6->Dock = System::Windows::Forms::DockStyle::Top;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button6->Location = System::Drawing::Point(0, 210);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(225, 50);
+			this->button6->TabIndex = 9;
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// btnAccommodatiion
+			// 
+			this->btnAccommodatiion->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAccommodatiion.BackgroundImage")));
+			this->btnAccommodatiion->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnAccommodatiion->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnAccommodatiion->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAccommodatiion->Location = System::Drawing::Point(0, 160);
+			this->btnAccommodatiion->Name = L"btnAccommodatiion";
+			this->btnAccommodatiion->Size = System::Drawing::Size(225, 50);
+			this->btnAccommodatiion->TabIndex = 8;
+			this->btnAccommodatiion->UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
@@ -165,53 +218,17 @@ namespace LankaJourneyUI {
 			this->button4->TabIndex = 7;
 			this->button4->UseVisualStyleBackColor = true;
 			// 
-			// btnAccommodatiion
+			// btnPlanning
 			// 
-			this->btnAccommodatiion->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAccommodatiion.BackgroundImage")));
-			this->btnAccommodatiion->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->btnAccommodatiion->Dock = System::Windows::Forms::DockStyle::Top;
-			this->btnAccommodatiion->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnAccommodatiion->Location = System::Drawing::Point(0, 160);
-			this->btnAccommodatiion->Name = L"btnAccommodatiion";
-			this->btnAccommodatiion->Size = System::Drawing::Size(225, 50);
-			this->btnAccommodatiion->TabIndex = 8;
-			this->btnAccommodatiion->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button6.BackgroundImage")));
-			this->button6->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button6->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->Location = System::Drawing::Point(0, 210);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(225, 50);
-			this->button6->TabIndex = 9;
-			this->button6->UseVisualStyleBackColor = true;
-			// 
-			// button7
-			// 
-			this->button7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button7.BackgroundImage")));
-			this->button7->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button7->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->Location = System::Drawing::Point(0, 260);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(225, 50);
-			this->button7->TabIndex = 10;
-			this->button7->UseVisualStyleBackColor = true;
-			// 
-			// button9
-			// 
-			this->button9->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button9.BackgroundImage")));
-			this->button9->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->button9->Dock = System::Windows::Forms::DockStyle::Bottom;
-			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button9->Location = System::Drawing::Point(0, 370);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(225, 50);
-			this->button9->TabIndex = 12;
-			this->button9->UseVisualStyleBackColor = true;
+			this->btnPlanning->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnPlanning.BackgroundImage")));
+			this->btnPlanning->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->btnPlanning->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnPlanning->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnPlanning->Location = System::Drawing::Point(0, 60);
+			this->btnPlanning->Name = L"btnPlanning";
+			this->btnPlanning->Size = System::Drawing::Size(225, 50);
+			this->btnPlanning->TabIndex = 6;
+			this->btnPlanning->UseVisualStyleBackColor = true;
 			// 
 			// btnDashboard
 			// 
@@ -226,17 +243,13 @@ namespace LankaJourneyUI {
 			this->btnDashboard->TabIndex = 5;
 			this->btnDashboard->UseVisualStyleBackColor = true;
 			// 
-			// horizontalLine
+			// pnlForButton
 			// 
-			this->horizontalLine->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->horizontalLine->Dock = System::Windows::Forms::DockStyle::Top;
-			this->horizontalLine->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"horizontalLine.Image")));
-			this->horizontalLine->Location = System::Drawing::Point(0, 310);
-			this->horizontalLine->Name = L"horizontalLine";
-			this->horizontalLine->Padding = System::Windows::Forms::Padding(20, 30, 0, 25);
-			this->horizontalLine->Size = System::Drawing::Size(225, 50);
-			this->horizontalLine->TabIndex = 5;
-			this->horizontalLine->TabStop = false;
+			this->pnlForButton->Controls->Add(this->button1);
+			this->pnlForButton->Location = System::Drawing::Point(562, 286);
+			this->pnlForButton->Name = L"pnlForButton";
+			this->pnlForButton->Size = System::Drawing::Size(396, 77);
+			this->pnlForButton->TabIndex = 5;
 			// 
 			// Dashboard
 			// 
@@ -245,8 +258,8 @@ namespace LankaJourneyUI {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(7)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)));
 			this->ClientSize = System::Drawing::Size(1262, 673);
+			this->Controls->Add(this->pnlForButton);
 			this->Controls->Add(this->PanelSlidebar);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->pictureBox1);
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
@@ -256,11 +269,14 @@ namespace LankaJourneyUI {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->PanelSlidebar->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->horizontalLine))->EndInit();
+			this->pnlForButton->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
